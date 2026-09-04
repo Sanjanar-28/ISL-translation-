@@ -1,0 +1,111 @@
+class_id,label,video_name,split,video_path,status,error,mae,max_difference,matching_percentage,exact_match,frames,left_detections,right_detections
+50,power,Power 2(1).mp4,test,D:\Amrita SLR Dataset\sign project\50.power\Power 2(1).mp4,MATCH,,1.1235002511655877e-10,7.450580596923828e-09,100.0,True,89,6,30
+28,Music,Music_1.mp4,test,D:\Amrita SLR Dataset\sign project\28.Music\Music_1.mp4,MATCH,,4.7305274281095315e-11,7.450580596923828e-09,100.0,True,107,48,79
+47,umberlla,Umbrella-2.mp4,test,D:\Amrita SLR Dataset\sign project\47.umberlla\Umbrella-2.mp4,MATCH,,3.547895657818323e-11,1.4901161193847656e-08,100.0,True,78,40,28
+17,friend,0403(40).mp4,test,D:\Amrita SLR Dataset\sign project\17.friend\0403(40).mp4,MATCH,,3.2522377152455206e-11,7.450580596923828e-09,100.0,True,66,2,33
+30,sleep,Sleep_1.mp4,test,D:\Amrita SLR Dataset\sign project\30.sleep\Sleep_1.mp4,MATCH,,2.6609216566275684e-11,1.4901161193847656e-08,100.0,True,59,18,30
+4,cow,0403(3).mp4,test,D:\Amrita SLR Dataset\sign project\4.cow\0403(3).mp4,MATCH,,2.3652637140547658e-11,1.4901161193847656e-08,100.0,True,70,54,55
+15,boy,manideepboy-3.mp4,test,D:\Amrita SLR Dataset\sign project\15.boy\manideepboy-3.mp4,MATCH,,2.3652637140547658e-11,7.450580596923828e-09,100.0,True,88,8,28
+42,work,manideepwork-3.mp4,test,D:\Amrita SLR Dataset\sign project\42.work\manideepwork-3.mp4,MATCH,,2.3652637140547658e-11,1.4901161193847656e-08,100.0,True,64,29,15
+50,power,POWER 2.mp4,test,D:\Amrita SLR Dataset\sign project\50.power\POWER 2.mp4,MATCH,,2.069605771481964e-11,7.450580596923828e-09,100.0,True,67,4,20
+9,hello,krishnarajhello_2.mp4,test,D:\Amrita SLR Dataset\sign project\9.hello\krishnarajhello_2.mp4,MATCH,,1.926396368812089e-11,7.450580596923828e-09,100.0,True,86,86,31
+35,student,Student 3(1).mp4,test,D:\Amrita SLR Dataset\sign project\35.student\Student 3(1).mp4,MATCH,,1.7739478289091615e-11,7.450580596923828e-09,100.0,True,154,72,67
+7,goodmorning,Good morning 3.mp4,test,D:\Amrita SLR Dataset\sign project\7.goodmorning\Good morning 3.mp4,MATCH,,1.4782898863363588e-11,1.4901161193847656e-08,100.0,True,78,2,39
+11,monsoon,Monsoon 1.mp4,test,D:\Amrita SLR Dataset\sign project\11.monsoon\Monsoon 1.mp4,MATCH,,1.1826318570273829e-11,1.4901161193847656e-08,100.0,True,61,25,25
+4,cow,manideepcow-1.mp4,test,D:\Amrita SLR Dataset\sign project\4.cow\manideepcow-1.mp4,MATCH,,1.1826318570273829e-11,1.4901161193847656e-08,100.0,True,83,41,55
+26,NAME,manideepname-2.mp4,test,D:\Amrita SLR Dataset\sign project\26.NAME\manideepname-2.mp4,MATCH,,1.1826318570273829e-11,2.9802322387695312e-08,100.0,True,59,3,32
+35,student,STUDENT 3.mp4,test,D:\Amrita SLR Dataset\sign project\35.student\STUDENT 3.mp4,MATCH,,1.1826318570273829e-11,2.9802322387695312e-08,100.0,True,108,68,72
+14,bad,Bad1.mp4,test,D:\Amrita SLR Dataset\sign project\14.bad\Bad1.mp4,MATCH,,8.869739144545807e-12,3.725290298461914e-09,100.0,True,100,3,39
+14,bad,Bad2.mp4,test,D:\Amrita SLR Dataset\sign project\14.bad\Bad2.mp4,MATCH,,8.869739144545807e-12,3.725290298461914e-09,100.0,True,100,3,39
+2,black,0403(82).mp4,test,D:\Amrita SLR Dataset\sign project\2.black\0403(82).mp4,MATCH,,5.913159285136915e-12,1.4901161193847656e-08,100.0,True,72,1,44
+10,youareperfect,manideepyouareperfect-2.mp4,test,D:\Amrita SLR Dataset\sign project\10.youareperfect\manideepyouareperfect-2.mp4,MATCH,,5.913159285136915e-12,7.450580596923828e-09,100.0,True,87,71,67
+50,power,Power 3(1).mp4,test,D:\Amrita SLR Dataset\sign project\50.power\Power 3(1).mp4,MATCH,,5.913159285136915e-12,7.450580596923828e-09,100.0,True,64,3,23
+41,welcome,WELCOME 3.mp4,test,D:\Amrita SLR Dataset\sign project\41.welcome\WELCOME 3.mp4,MATCH,,2.9565796425684576e-12,7.450580596923828e-09,100.0,True,60,35,25
+42,work,0403(125).mp4,test,D:\Amrita SLR Dataset\sign project\42.work\0403(125).mp4,MATCH,,2.9565796425684576e-12,7.450580596923828e-09,100.0,True,51,32,36
+15,boy,Boy -1.mp4,test,D:\Amrita SLR Dataset\sign project\15.boy\Boy -1.mp4,MATCH,,2.9565796425684576e-12,7.450580596923828e-09,100.0,True,97,5,54
+5,dog,Dog1.mp4,test,D:\Amrita SLR Dataset\sign project\5.dog\Dog1.mp4,MATCH,,0.0,0.0,100.0,True,96,28,50
+5,dog,0403(6).mp4,test,D:\Amrita SLR Dataset\sign project\5.dog\0403(6).mp4,MATCH,,0.0,0.0,100.0,True,58,30,36
+6,fish,Fish 3.mp4,test,D:\Amrita SLR Dataset\sign project\6.fish\Fish 3.mp4,MATCH,,0.0,0.0,100.0,True,102,29,56
+6,fish,Fish -2.mp4,test,D:\Amrita SLR Dataset\sign project\6.fish\Fish -2.mp4,MATCH,,0.0,0.0,100.0,True,97,59,22
+7,goodmorning,NachikethGoodMorning2.mp4,test,D:\Amrita SLR Dataset\sign project\7.goodmorning\NachikethGoodMorning2.mp4,MATCH,,0.0,0.0,100.0,True,88,84,75
+7,goodmorning,NachikethGoodMorning1.mp4,test,D:\Amrita SLR Dataset\sign project\7.goodmorning\NachikethGoodMorning1.mp4,MATCH,,0.0,0.0,100.0,True,99,96,84
+12,afternoon,Afternoon_1.mp4,test,D:\Amrita SLR Dataset\sign project\12.afternoon\Afternoon_1.mp4,MATCH,,0.0,0.0,100.0,True,73,2,30
+12,afternoon,0403(85).mp4,test,D:\Amrita SLR Dataset\sign project\12.afternoon\0403(85).mp4,MATCH,,0.0,0.0,100.0,True,65,1,38
+10,youareperfect,You Are Perfect_1.mp4,test,D:\Amrita SLR Dataset\sign project\10.youareperfect\You Are Perfect_1.mp4,MATCH,,0.0,0.0,100.0,True,77,69,67
+11,monsoon,0403(25).mp4,test,D:\Amrita SLR Dataset\sign project\11.monsoon\0403(25).mp4,MATCH,,0.0,0.0,100.0,True,70,39,36
+3,cat,NachikethCat3.mp4,test,D:\Amrita SLR Dataset\sign project\3.cat\NachikethCat3.mp4,MATCH,,0.0,0.0,100.0,True,126,109,114
+3,cat,manideepcat-3.mp4,test,D:\Amrita SLR Dataset\sign project\3.cat\manideepcat-3.mp4,MATCH,,0.0,0.0,100.0,True,55,44,47
+2,black,NachikethBlack3.mp4,test,D:\Amrita SLR Dataset\sign project\2.black\NachikethBlack3.mp4,MATCH,,0.0,0.0,100.0,True,101,101,87
+3,cat,0403(2).mp4,test,D:\Amrita SLR Dataset\sign project\3.cat\0403(2).mp4,MATCH,,0.0,0.0,100.0,True,95,43,50
+1,bird,0403(78).mp4,test,D:\Amrita SLR Dataset\sign project\1.bird\0403(78).mp4,MATCH,,0.0,0.0,100.0,True,83,57,58
+9,hello,Nachikethhello3.mp4,test,D:\Amrita SLR Dataset\sign project\9.hello\Nachikethhello3.mp4,MATCH,,0.0,0.0,100.0,True,107,107,93
+8,grey,manideepgrey-1.mp4,test,D:\Amrita SLR Dataset\sign project\8.grey\manideepgrey-1.mp4,MATCH,,0.0,0.0,100.0,True,88,88,52
+10,youareperfect,0403(23).mp4,test,D:\Amrita SLR Dataset\sign project\10.youareperfect\0403(23).mp4,MATCH,,0.0,0.0,100.0,True,63,25,39
+9,hello,manideephello-3.mp4,test,D:\Amrita SLR Dataset\sign project\9.hello\manideephello-3.mp4,MATCH,,0.0,0.0,100.0,True,48,48,42
+8,grey,NachikethGrey2.mp4,test,D:\Amrita SLR Dataset\sign project\8.grey\NachikethGrey2.mp4,MATCH,,0.0,0.0,100.0,True,99,99,84
+1,bird,Bird -1.mp4,test,D:\Amrita SLR Dataset\sign project\1.bird\Bird -1.mp4,MATCH,,0.0,0.0,100.0,True,134,66,70
+1,bird,manideepbird-3.mp4,test,D:\Amrita SLR Dataset\sign project\1.bird\manideepbird-3.mp4,MATCH,,0.0,0.0,100.0,True,134,100,113
+22,father,Father2.mp4,test,D:\Amrita SLR Dataset\sign project\22.father\Father2.mp4,MATCH,,0.0,0.0,100.0,True,116,3,45
+21,good,KrishnarajGood3.mp4,test,D:\Amrita SLR Dataset\sign project\21.good\KrishnarajGood3.mp4,MATCH,,0.0,0.0,100.0,True,84,6,40
+21,good,Good1.mp4,test,D:\Amrita SLR Dataset\sign project\21.good\Good1.mp4,MATCH,,0.0,0.0,100.0,True,95,1,33
+21,good,0403(94).mp4,test,D:\Amrita SLR Dataset\sign project\21.good\0403(94).mp4,MATCH,,0.0,0.0,100.0,True,60,1,26
+19,girl,manideep girl-1.mp4,test,D:\Amrita SLR Dataset\sign project\19.girl\manideep girl-1.mp4,MATCH,,0.0,0.0,100.0,True,96,7,36
+19,girl,Girl -2.mp4,test,D:\Amrita SLR Dataset\sign project\19.girl\Girl -2.mp4,MATCH,,0.0,0.0,100.0,True,96,1,52
+18,drinking,Drinking -2.mp4,test,D:\Amrita SLR Dataset\sign project\18.drinking\Drinking -2.mp4,MATCH,,0.0,0.0,100.0,True,78,3,29
+17,friend,manideepfriend-1.mp4,test,D:\Amrita SLR Dataset\sign project\17.friend\manideepfriend-1.mp4,MATCH,,0.0,0.0,100.0,True,100,21,2
+17,friend,KrishnarajFriend2.mp4,test,D:\Amrita SLR Dataset\sign project\17.friend\KrishnarajFriend2.mp4,MATCH,,0.0,0.0,100.0,True,79,7,50
+16,eat,manideepeat-1.mp4,test,D:\Amrita SLR Dataset\sign project\16.eat\manideepeat-1.mp4,MATCH,,0.0,0.0,100.0,True,99,1,16
+16,eat,Eat_2.mp4,test,D:\Amrita SLR Dataset\sign project\16.eat\Eat_2.mp4,MATCH,,0.0,0.0,100.0,True,58,25,21
+15,boy,0403(33).mp4,test,D:\Amrita SLR Dataset\sign project\15.boy\0403(33).mp4,MATCH,,0.0,0.0,100.0,True,63,6,46
+25,mother,KrishnarajMother1.mp4,test,D:\Amrita SLR Dataset\sign project\25.mother\KrishnarajMother1.mp4,MATCH,,0.0,0.0,100.0,True,69,7,40
+24,help,Help -3.mp4,test,D:\Amrita SLR Dataset\sign project\24.help\Help -3.mp4,MATCH,,0.0,0.0,100.0,True,105,19,14
+22,father,Father_2.mp4,test,D:\Amrita SLR Dataset\sign project\22.father\Father_2.mp4,MATCH,,0.0,0.0,100.0,True,62,1,25
+23,evening,0403(100).mp4,test,D:\Amrita SLR Dataset\sign project\23.evening\0403(100).mp4,MATCH,,0.0,0.0,100.0,True,71,38,37
+29,nose,manideepnose-1.mp4,test,D:\Amrita SLR Dataset\sign project\29.nose\manideepnose-1.mp4,MATCH,,0.0,0.0,100.0,True,42,1,3
+29,nose,Nose_2.mp4,test,D:\Amrita SLR Dataset\sign project\29.nose\Nose_2.mp4,MATCH,,0.0,0.0,100.0,True,71,1,32
+29,nose,KrishnarajNose2.mp4,test,D:\Amrita SLR Dataset\sign project\29.nose\KrishnarajNose2.mp4,MATCH,,0.0,0.0,100.0,True,82,2,39
+30,sleep,KrishnarajSleep3.mp4,test,D:\Amrita SLR Dataset\sign project\30.sleep\KrishnarajSleep3.mp4,MATCH,,0.0,0.0,100.0,True,77,23,9
+31,sit,Sit_3.mp4,test,D:\Amrita SLR Dataset\sign project\31.sit\Sit_3.mp4,MATCH,,0.0,0.0,100.0,True,81,44,43
+31,sit,manideepsit-3.mp4,test,D:\Amrita SLR Dataset\sign project\31.sit\manideepsit-3.mp4,MATCH,,0.0,0.0,100.0,True,70,21,24
+30,sleep,Sleep -2.mp4,test,D:\Amrita SLR Dataset\sign project\30.sleep\Sleep -2.mp4,MATCH,,0.0,0.0,100.0,True,75,12,40
+31,sit,Sit3.mp4,test,D:\Amrita SLR Dataset\sign project\31.sit\Sit3.mp4,MATCH,,0.0,0.0,100.0,True,101,46,43
+32,sorry,manideepsorry-1.mp4,test,D:\Amrita SLR Dataset\sign project\32.sorry\manideepsorry-1.mp4,MATCH,,0.0,0.0,100.0,True,56,3,35
+24,help,manideephelp-2.mp4,test,D:\Amrita SLR Dataset\sign project\24.help\manideephelp-2.mp4,MATCH,,0.0,0.0,100.0,True,64,9,12
+27,Night,KrishnarajNight3.mp4,test,D:\Amrita SLR Dataset\sign project\27.Night\KrishnarajNight3.mp4,MATCH,,0.0,0.0,100.0,True,94,36,50
+27,Night,0403(75).mp4,test,D:\Amrita SLR Dataset\sign project\27.Night\0403(75).mp4,MATCH,,0.0,0.0,100.0,True,94,34,48
+28,Music,0403(64).mp4,test,D:\Amrita SLR Dataset\sign project\28.Music\0403(64).mp4,MATCH,,0.0,0.0,100.0,True,115,40,72
+24,help,Help_1.mp4,test,D:\Amrita SLR Dataset\sign project\24.help\Help_1.mp4,MATCH,,0.0,0.0,100.0,True,74,35,39
+23,evening,Evening 2.mp4,test,D:\Amrita SLR Dataset\sign project\23.evening\Evening 2.mp4,MATCH,,0.0,0.0,100.0,True,91,37,30
+23,evening,KrishnarajEvening1.mp4,test,D:\Amrita SLR Dataset\sign project\23.evening\KrishnarajEvening1.mp4,MATCH,,0.0,0.0,100.0,True,77,33,37
+36,study,Study 2(1).mp4,test,D:\Amrita SLR Dataset\sign project\36.study\Study 2(1).mp4,MATCH,,0.0,0.0,100.0,True,120,36,33
+34,stop,STOP 3.mp4,test,D:\Amrita SLR Dataset\sign project\34.stop\STOP 3.mp4,MATCH,,0.0,0.0,100.0,True,55,17,14
+34,stop,0403(65).mp4,test,D:\Amrita SLR Dataset\sign project\34.stop\0403(65).mp4,MATCH,,0.0,0.0,100.0,True,54,34,39
+34,stop,KrishnarajStop1.mp4,test,D:\Amrita SLR Dataset\sign project\34.stop\KrishnarajStop1.mp4,MATCH,,0.0,0.0,100.0,True,50,10,34
+33,stand,KrishnarajStand1.mp4,test,D:\Amrita SLR Dataset\sign project\33.stand\KrishnarajStand1.mp4,MATCH,,0.0,0.0,100.0,True,71,31,36
+33,stand,0403(69).mp4,test,D:\Amrita SLR Dataset\sign project\33.stand\0403(69).mp4,MATCH,,0.0,0.0,100.0,True,90,44,50
+32,sorry,0403(60).mp4,test,D:\Amrita SLR Dataset\sign project\32.sorry\0403(60).mp4,MATCH,,0.0,0.0,100.0,True,74,1,40
+36,study,manideepstudy-2.mp4,test,D:\Amrita SLR Dataset\sign project\36.study\manideepstudy-2.mp4,MATCH,,0.0,0.0,100.0,True,66,28,29
+40,tommorow,Tomorrow 3(1).mp4,test,D:\Amrita SLR Dataset\sign project\40.tommorow\Tomorrow 3(1).mp4,MATCH,,0.0,0.0,100.0,True,97,1,42
+39,today,Today -1.mp4,test,D:\Amrita SLR Dataset\sign project\39.today\Today -1.mp4,MATCH,,0.0,0.0,100.0,True,93,2,27
+38,thankyou,Thankyou -1.mp4,test,D:\Amrita SLR Dataset\sign project\38.thankyou\Thankyou -1.mp4,MATCH,,0.0,0.0,100.0,True,95,32,34
+40,tommorow,krishnarajtommorow_2.mp4,test,D:\Amrita SLR Dataset\sign project\40.tommorow\krishnarajtommorow_2.mp4,MATCH,,0.0,0.0,100.0,True,63,1,47
+38,thankyou,Thank you 1.mp4,test,D:\Amrita SLR Dataset\sign project\38.thankyou\Thank you 1.mp4,MATCH,,0.0,0.0,100.0,True,84,37,42
+37,teacher,0403(109).mp4,test,D:\Amrita SLR Dataset\sign project\37.teacher\0403(109).mp4,MATCH,,0.0,0.0,100.0,True,71,31,47
+37,teacher,TEACHER 2.mp4,test,D:\Amrita SLR Dataset\sign project\37.teacher\TEACHER 2.mp4,MATCH,,0.0,0.0,100.0,True,76,37,39
+38,thankyou,THANKYOU 2.mp4,test,D:\Amrita SLR Dataset\sign project\38.thankyou\THANKYOU 2.mp4,MATCH,,0.0,0.0,100.0,True,56,31,27
+43,yesterday,Yesterday -2.mp4,test,D:\Amrita SLR Dataset\sign project\43.yesterday\Yesterday -2.mp4,MATCH,,0.0,0.0,100.0,True,71,7,26
+42,work,Work -3.mp4,test,D:\Amrita SLR Dataset\sign project\42.work\Work -3.mp4,MATCH,,0.0,0.0,100.0,True,103,28,13
+41,welcome,WELCOME 2.mp4,test,D:\Amrita SLR Dataset\sign project\41.welcome\WELCOME 2.mp4,MATCH,,0.0,0.0,100.0,True,62,32,26
+41,welcome,manideepwelcome-2.mp4,test,D:\Amrita SLR Dataset\sign project\41.welcome\manideepwelcome-2.mp4,MATCH,,0.0,0.0,100.0,True,87,30,42
+43,yesterday,Yesterday 3(1).mp4,test,D:\Amrita SLR Dataset\sign project\43.yesterday\Yesterday 3(1).mp4,MATCH,,0.0,0.0,100.0,True,103,2,36
+44,teeth,KrishnarajTeeth2.mp4,test,D:\Amrita SLR Dataset\sign project\44.teeth\KrishnarajTeeth2.mp4,MATCH,,0.0,0.0,100.0,True,83,2,49
+45,hand,Hand -1.mp4,test,D:\Amrita SLR Dataset\sign project\45.hand\Hand -1.mp4,MATCH,,0.0,0.0,100.0,True,105,26,26
+45,hand,Hand -3.mp4,test,D:\Amrita SLR Dataset\sign project\45.hand\Hand -3.mp4,MATCH,,0.0,0.0,100.0,True,93,29,26
+46,write,manideepwrite-3.mp4,test,D:\Amrita SLR Dataset\sign project\46.write\manideepwrite-3.mp4,MATCH,,0.0,0.0,100.0,True,88,17,27
+46,write,0403(139).mp4,test,D:\Amrita SLR Dataset\sign project\46.write\0403(139).mp4,MATCH,,0.0,0.0,100.0,True,90,40,33
+46,write,0403(137).mp4,test,D:\Amrita SLR Dataset\sign project\46.write\0403(137).mp4,MATCH,,0.0,0.0,100.0,True,66,41,41
+45,hand,krishnarajhand3.mp4,test,D:\Amrita SLR Dataset\sign project\45.hand\krishnarajhand3.mp4,MATCH,,0.0,0.0,100.0,True,72,37,40
+48,ring,0403(140).mp4,test,D:\Amrita SLR Dataset\sign project\48.ring\0403(140).mp4,MATCH,,0.0,0.0,100.0,True,79,46,46
+47,umberlla,manideepumbrella-1.mp4,test,D:\Amrita SLR Dataset\sign project\47.umberlla\manideepumbrella-1.mp4,MATCH,,0.0,0.0,100.0,True,66,35,26
+47,umberlla,UMBRELLA 2.mp4,test,D:\Amrita SLR Dataset\sign project\47.umberlla\UMBRELLA 2.mp4,MATCH,,0.0,0.0,100.0,True,67,44,36
+48,ring,KrishnarajRing1.mp4,test,D:\Amrita SLR Dataset\sign project\48.ring\KrishnarajRing1.mp4,MATCH,,0.0,0.0,100.0,True,89,52,48

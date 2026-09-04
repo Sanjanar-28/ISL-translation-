@@ -1,0 +1,6 @@
+model,test_accuracy
+Original RF,0.7538461538461538
+Motion RF,0.7153846153846154
+Temporal RF,0.7153846153846154
+Original + Motion,0.7307692307692307
+3-Model Ensemble,0.7769230769230769

@@ -1,0 +1,733 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2937;
+  background: #f4f6fb;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at top center,
+      #eef0ff 0%,
+      #f7f8fc 45%,
+      #f4f6fb 100%
+    );
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+.app {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  height: 72px;
+  padding: 0 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid #e5e7eb;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  color: #1f2d3d;
+}
+
+.logo-icon {
+  font-size: 28px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  border: none;
+  background: transparent;
+
+  color: #4b5563;
+  font-size: 15px;
+
+  padding: 8px 4px;
+}
+
+.nav-link:hover {
+  color: #4f46e5;
+}
+
+.nav-link.active {
+  color: #111827;
+  font-weight: 600;
+}
+
+.profile-button {
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #eef0ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main-container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+
+  padding: 60px 0 70px;
+
+  flex: 1;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.hero-tag {
+  margin-bottom: 20px;
+
+  color: #5b63bd;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  font-size: clamp(34px, 5vw, 50px);
+  font-weight: 700;
+
+  color: #1f2937;
+
+  margin-bottom: 10px;
+}
+
+.hero h1 span {
+  color: #5965c4;
+}
+
+.hero-description {
+  max-width: 700px;
+  margin: 0 auto;
+
+  color: #667085;
+
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   MODE SWITCH
+========================================================= */
+
+.mode-switch {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  margin-bottom: 28px;
+}
+
+.mode-button {
+  border: none;
+
+  padding: 14px 28px;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+  color: #374151;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.mode-button:hover {
+  transform: translateY(-2px);
+}
+
+.active-mode {
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5,
+      #5b63bd
+    );
+
+  color: white;
+}
+
+
+/* =========================================================
+   CONTENT GRID
+========================================================= */
+
+.content-grid {
+  display: grid;
+
+  grid-template-columns: 1.2fr 0.9fr;
+
+  gap: 22px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card {
+  background: rgba(255, 255, 255, 0.92);
+
+  border: 1px solid rgba(226, 232, 240, 0.9);
+
+  border-radius: 22px;
+
+  padding: 26px;
+
+  box-shadow:
+    0 12px 35px rgba(44, 62, 100, 0.08);
+}
+
+.card h2 {
+  text-align: center;
+
+  color: #1f2937;
+
+  font-size: 19px;
+
+  margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   CAMERA CARD
+========================================================= */
+
+.sign-card {
+  min-height: 470px;
+}
+
+.camera-preview {
+  width: 100%;
+  height: 300px;
+
+  background: #1d2635;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   LIVE WEBCAM
+========================================================= */
+.camera-preview {
+  width: 100%;
+  height: 300px;
+
+  background: #1d2635;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  background: #000;
+
+  position: absolute;
+  inset: 0;
+}
+
+.webcam-preview {
+  object-fit: cover;
+
+  transform: scaleX(-1);
+}
+
+.uploaded-preview {
+  object-fit: contain;
+}
+
+.camera-placeholder {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  text-align: center;
+}
+
+.camera-icon {
+  font-size: 45px;
+  margin-bottom: 14px;
+}
+
+.camera-placeholder p {
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   CAMERA PLACEHOLDER
+========================================================= */
+
+.camera-placeholder {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  text-align: center;
+}
+
+.camera-icon {
+  font-size: 45px;
+
+  margin-bottom: 14px;
+}
+
+.camera-placeholder p {
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   CAMERA ERROR
+========================================================= */
+
+.camera-error {
+  color: #dc2626;
+
+  font-size: 13px;
+
+  margin-top: 10px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   CAMERA BUTTONS
+========================================================= */
+
+.camera-buttons {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 16px;
+}
+
+.primary-button,
+.secondary-button {
+  border-radius: 10px;
+
+  padding: 12px 20px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.primary-button {
+  border: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5,
+      #5b63bd
+    );
+
+  color: white;
+
+  box-shadow:
+    0 6px 15px rgba(79, 70, 229, 0.25);
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  border: 1px solid #d1d5db;
+
+  background: white;
+  color: #374151;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-button {
+  cursor: pointer;
+}
+
+.secondary-button:hover {
+  background: #f8fafc;
+}
+
+
+/* =========================================================
+   RESULT CARD
+========================================================= */
+
+.result-card {
+  min-height: 470px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.result-icon {
+  font-size: 52px;
+
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.result-card h3 {
+  font-size: 30px;
+
+  letter-spacing: 1px;
+
+  color: #344054;
+
+  margin-bottom: 6px;
+}
+
+.confidence {
+  color: #667085;
+
+  font-size: 16px;
+
+  margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   LANGUAGE SELECT
+========================================================= */
+
+.language-select {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border-radius: 10px;
+
+  border: 1px solid #d1d5db;
+
+  background: #ffffff;
+
+  color: #374151;
+
+  outline: none;
+
+  margin-bottom: 10px;
+}
+
+.language-select:focus {
+  border-color: #6366f1;
+
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+
+/* =========================================================
+   SPEAK BUTTON
+========================================================= */
+
+.speak-button {
+  width: 100%;
+
+  border: none;
+
+  border-radius: 10px;
+
+  padding: 12px;
+
+  background: #e8ecf8;
+
+  color: #4f5ca5;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.speak-button:hover {
+  background: #dfe5f5;
+}
+
+
+/* =========================================================
+   TEXT TO SIGN
+========================================================= */
+
+.text-sign-container {
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.text-sign-container p {
+  text-align: center;
+
+  color: #667085;
+}
+
+.text-input {
+  width: 100%;
+  min-height: 150px;
+
+  padding: 16px;
+
+  border-radius: 12px;
+
+  border: 1px solid #d1d5db;
+
+  resize: vertical;
+
+  outline: none;
+}
+
+.text-input:focus {
+  border-color: #6366f1;
+
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+  padding: 22px;
+
+  text-align: center;
+
+  border-top: 1px solid #e5e7eb;
+
+  color: #667085;
+
+  font-size: 14px;
+
+  background: rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-card {
+    min-height: 380px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .navbar {
+    height: auto;
+
+    padding: 16px 5%;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .logo-icon {
+    font-size: 22px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  .main-container {
+    width: 94%;
+
+    padding-top: 40px;
+  }
+
+  .hero {
+    margin-bottom: 30px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .mode-switch {
+    width: 100%;
+  }
+
+  .mode-button {
+    flex: 1;
+
+    padding: 12px 8px;
+
+    font-size: 13px;
+  }
+
+  .card {
+    padding: 18px;
+
+    border-radius: 18px;
+  }
+
+  .camera-preview {
+    height: 240px;
+  }
+
+  .camera-buttons {
+    flex-direction: column;
+  }
+
+  .camera-buttons button,
+  .camera-buttons label {
+    width: 100%;
+  }
+}

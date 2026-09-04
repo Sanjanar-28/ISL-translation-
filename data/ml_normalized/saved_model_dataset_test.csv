@@ -1,0 +1,131 @@
+class_id,label,video_name,split,predicted_label,correct
+1,bird,0403(78).mp4,test,goodmorning,False
+1,bird,Bird -1.mp4,test,goodmorning,False
+1,bird,manideepbird-3.mp4,test,goodmorning,False
+2,black,0403(82).mp4,test,black,True
+2,black,NachikethBlack3.mp4,test,black,True
+2,black,krishnarajblack.mp4,test,black,True
+3,cat,0403(2).mp4,test,black,False
+3,cat,NachikethCat3.mp4,test,black,False
+3,cat,manideepcat-3.mp4,test,black,False
+4,cow,0403(3).mp4,test,black,False
+4,cow,krishnarajcow_2.mp4,test,black,False
+4,cow,manideepcow-1.mp4,test,black,False
+5,dog,0403(6).mp4,test,black,False
+5,dog,Dog1.mp4,test,goodmorning,False
+6,fish,Fish -2.mp4,test,goodmorning,False
+6,fish,Fish 3.mp4,test,black,False
+7,goodmorning,Good morning 3.mp4,test,goodmorning,True
+7,goodmorning,NachikethGoodMorning1.mp4,test,black,False
+7,goodmorning,NachikethGoodMorning2.mp4,test,black,False
+8,grey,NachikethGrey2.mp4,test,black,False
+8,grey,manideepgrey-1.mp4,test,black,False
+9,hello,Nachikethhello3.mp4,test,black,False
+9,hello,krishnarajhello_2.mp4,test,black,False
+9,hello,manideephello-3.mp4,test,black,False
+10,youareperfect,0403(23).mp4,test,black,False
+10,youareperfect,You Are Perfect_1.mp4,test,black,False
+10,youareperfect,manideepyouareperfect-2.mp4,test,black,False
+11,monsoon,0403(25).mp4,test,black,False
+11,monsoon,Monsoon 1.mp4,test,black,False
+11,monsoon,krishnarajmonsoon_1.mp4,test,black,False
+12,afternoon,0403(85).mp4,test,black,False
+12,afternoon,Afternoon_1.mp4,test,monsoon,False
+13,angry,Angry -3.mp4,test,black,False
+13,angry,Angry_2.mp4,test,black,False
+14,bad,0403(30).mp4,test,black,False
+14,bad,Bad1.mp4,test,black,False
+14,bad,Bad2.mp4,test,black,False
+15,boy,0403(33).mp4,test,black,False
+15,boy,Boy -1.mp4,test,black,False
+15,boy,manideepboy-3.mp4,test,black,False
+16,eat,Eat_2.mp4,test,goodmorning,False
+16,eat,manideepeat-1.mp4,test,black,False
+17,friend,0403(40).mp4,test,black,False
+17,friend,KrishnarajFriend2.mp4,test,black,False
+17,friend,manideepfriend-1.mp4,test,black,False
+18,drinking,0403(42).mp4,test,black,False
+18,drinking,Drinking -2.mp4,test,black,False
+19,girl,0403(86).mp4,test,black,False
+19,girl,Girl -2.mp4,test,black,False
+19,girl,manideep girl-1.mp4,test,black,False
+20,brother,Brother -2.mp4,test,black,False
+20,brother,Brother 3.mp4,test,black,False
+21,good,0403(94).mp4,test,black,False
+21,good,Good1.mp4,test,monsoon,False
+21,good,KrishnarajGood3.mp4,test,black,False
+22,father,Father1.mp4,test,black,False
+22,father,Father2.mp4,test,black,False
+22,father,Father_2.mp4,test,black,False
+23,evening,0403(100).mp4,test,bird,False
+23,evening,Evening 2.mp4,test,black,False
+23,evening,KrishnarajEvening1.mp4,test,black,False
+24,help,Help -3.mp4,test,black,False
+24,help,Help_1.mp4,test,black,False
+24,help,manideephelp-2.mp4,test,goodmorning,False
+25,mother,KrishnarajMother1.mp4,test,goodmorning,False
+25,mother,Mother_1.mp4,test,black,False
+25,mother,manideepmother-1.mp4,test,black,False
+26,NAME,Name3.mp4,test,black,False
+26,NAME,manideepname-2.mp4,test,black,False
+27,Night,0403(75).mp4,test,black,False
+27,Night,KrishnarajNight3.mp4,test,black,False
+28,Music,0403(64).mp4,test,black,False
+28,Music,Music_1.mp4,test,black,False
+29,nose,KrishnarajNose2.mp4,test,goodmorning,False
+29,nose,Nose_2.mp4,test,black,False
+29,nose,manideepnose-1.mp4,test,black,False
+30,sleep,KrishnarajSleep3.mp4,test,black,False
+30,sleep,Sleep -2.mp4,test,black,False
+30,sleep,Sleep_1.mp4,test,black,False
+31,sit,Sit3.mp4,test,black,False
+31,sit,Sit_3.mp4,test,bird,False
+31,sit,manideepsit-3.mp4,test,black,False
+32,sorry,0403(60).mp4,test,black,False
+32,sorry,0403(61).mp4,test,black,False
+32,sorry,manideepsorry-1.mp4,test,black,False
+33,stand,0403(69).mp4,test,black,False
+33,stand,KrishnarajStand1.mp4,test,goodmorning,False
+34,stop,0403(65).mp4,test,black,False
+34,stop,KrishnarajStop1.mp4,test,goodmorning,False
+34,stop,STOP 3.mp4,test,black,False
+35,student,STUDENT 3.mp4,test,goodmorning,False
+35,student,Student 3(1).mp4,test,goodmorning,False
+36,study,Study 2(1).mp4,test,goodmorning,False
+36,study,manideepstudy-2.mp4,test,goodmorning,False
+37,teacher,0403(109).mp4,test,black,False
+37,teacher,TEACHER 2.mp4,test,goodmorning,False
+38,thankyou,THANKYOU 2.mp4,test,goodmorning,False
+38,thankyou,Thank you 1.mp4,test,goodmorning,False
+38,thankyou,Thankyou -1.mp4,test,black,False
+39,today,Today -1.mp4,test,black,False
+39,today,manideeptoday-2.mp4,test,black,False
+40,tommorow,Tomorrow 3(1).mp4,test,black,False
+40,tommorow,krishnarajtommorow_2.mp4,test,black,False
+40,tommorow,manideeptomorrow-3.mp4,test,black,False
+41,welcome,WELCOME 2.mp4,test,goodmorning,False
+41,welcome,WELCOME 3.mp4,test,goodmorning,False
+41,welcome,manideepwelcome-2.mp4,test,black,False
+42,work,0403(125).mp4,test,black,False
+42,work,Work -3.mp4,test,black,False
+42,work,manideepwork-3.mp4,test,black,False
+43,yesterday,Yesterday -2.mp4,test,black,False
+43,yesterday,Yesterday 3(1).mp4,test,goodmorning,False
+43,yesterday,manideepyesterday-1.mp4,test,goodmorning,False
+44,teeth,0403(134).mp4,test,black,False
+44,teeth,KrishnarajTeeth2.mp4,test,goodmorning,False
+44,teeth,manideepteeth-2.mp4,test,black,False
+45,hand,Hand -1.mp4,test,black,False
+45,hand,Hand -3.mp4,test,black,False
+45,hand,krishnarajhand3.mp4,test,black,False
+46,write,0403(137).mp4,test,black,False
+46,write,0403(139).mp4,test,black,False
+46,write,manideepwrite-3.mp4,test,black,False
+47,umberlla,UMBRELLA 2.mp4,test,black,False
+47,umberlla,Umbrella-2.mp4,test,black,False
+47,umberlla,manideepumbrella-1.mp4,test,black,False
+48,ring,0403(140).mp4,test,black,False
+48,ring,KrishnarajRing1.mp4,test,black,False
+50,power,POWER 2.mp4,test,black,False
+50,power,Power 2(1).mp4,test,black,False
+50,power,Power 3(1).mp4,test,black,False

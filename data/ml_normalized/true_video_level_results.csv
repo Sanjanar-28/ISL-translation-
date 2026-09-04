@@ -1,0 +1,131 @@
+video_name,video_path,actual_label,actual_class_id,predicted_label,predicted_class_id,confidence,correct,status
+0403(78).mp4,D:\Amrita SLR Dataset\sign project\1.bird\0403(78).mp4,bird,1,bird,6,0.16799074074074072,True,SUCCESS
+Bird -1.mp4,D:\Amrita SLR Dataset\sign project\1.bird\Bird -1.mp4,bird,1,bird,6,0.1735501813001813,True,SUCCESS
+manideepbird-3.mp4,D:\Amrita SLR Dataset\sign project\1.bird\manideepbird-3.mp4,bird,1,bird,6,0.15502360602360604,True,SUCCESS
+0403(82).mp4,D:\Amrita SLR Dataset\sign project\2.black\0403(82).mp4,black,2,sorry,33,0.3466666666666667,False,SUCCESS
+NachikethBlack3.mp4,D:\Amrita SLR Dataset\sign project\2.black\NachikethBlack3.mp4,black,2,welcome,44,0.1,False,SUCCESS
+krishnarajblack.mp4,D:\Amrita SLR Dataset\sign project\2.black\krishnarajblack.mp4,black,2,black,7,0.25253937021584105,True,SUCCESS
+0403(2).mp4,D:\Amrita SLR Dataset\sign project\3.cat\0403(2).mp4,cat,3,welcome,44,0.17,False,SUCCESS
+NachikethCat3.mp4,D:\Amrita SLR Dataset\sign project\3.cat\NachikethCat3.mp4,cat,3,welcome,44,0.10666666666666667,False,SUCCESS
+manideepcat-3.mp4,D:\Amrita SLR Dataset\sign project\3.cat\manideepcat-3.mp4,cat,3,bird,6,0.12658477633477636,False,SUCCESS
+0403(3).mp4,D:\Amrita SLR Dataset\sign project\4.cow\0403(3).mp4,cow,4,bird,6,0.16877777777777778,False,SUCCESS
+krishnarajcow_2.mp4,D:\Amrita SLR Dataset\sign project\4.cow\krishnarajcow_2.mp4,cow,4,black,7,0.26413818752054063,False,SUCCESS
+manideepcow-1.mp4,D:\Amrita SLR Dataset\sign project\4.cow\manideepcow-1.mp4,cow,4,bird,6,0.1466798941798942,False,SUCCESS
+0403(6).mp4,D:\Amrita SLR Dataset\sign project\5.dog\0403(6).mp4,dog,5,bird,6,0.18942592592592594,False,SUCCESS
+Dog1.mp4,D:\Amrita SLR Dataset\sign project\5.dog\Dog1.mp4,dog,5,grey,22,0.10333333333333333,False,SUCCESS
+Fish -2.mp4,D:\Amrita SLR Dataset\sign project\6.fish\Fish -2.mp4,fish,6,sorry,33,0.13666666666666666,False,SUCCESS
+Fish 3.mp4,D:\Amrita SLR Dataset\sign project\6.fish\Fish 3.mp4,fish,6,sorry,33,0.16333333333333333,False,SUCCESS
+Good morning 3.mp4,D:\Amrita SLR Dataset\sign project\7.goodmorning\Good morning 3.mp4,goodmorning,7,bad,5,0.1577777777777778,False,SUCCESS
+NachikethGoodMorning1.mp4,D:\Amrita SLR Dataset\sign project\7.goodmorning\NachikethGoodMorning1.mp4,goodmorning,7,sorry,33,0.11,False,SUCCESS
+NachikethGoodMorning2.mp4,D:\Amrita SLR Dataset\sign project\7.goodmorning\NachikethGoodMorning2.mp4,goodmorning,7,sorry,33,0.14,False,SUCCESS
+NachikethGrey2.mp4,D:\Amrita SLR Dataset\sign project\8.grey\NachikethGrey2.mp4,grey,8,welcome,44,0.14333333333333334,False,SUCCESS
+manideepgrey-1.mp4,D:\Amrita SLR Dataset\sign project\8.grey\manideepgrey-1.mp4,grey,8,sorry,33,0.10666666666666667,False,SUCCESS
+Nachikethhello3.mp4,D:\Amrita SLR Dataset\sign project\9.hello\Nachikethhello3.mp4,hello,9,sorry,33,0.14,False,SUCCESS
+krishnarajhello_2.mp4,D:\Amrita SLR Dataset\sign project\9.hello\krishnarajhello_2.mp4,hello,9,sorry,33,0.10666666666666667,False,SUCCESS
+manideephello-3.mp4,D:\Amrita SLR Dataset\sign project\9.hello\manideephello-3.mp4,hello,9,welcome,44,0.13666666666666666,False,SUCCESS
+0403(23).mp4,D:\Amrita SLR Dataset\sign project\10.youareperfect\0403(23).mp4,youareperfect,10,sorry,33,0.13,False,SUCCESS
+You Are Perfect_1.mp4,D:\Amrita SLR Dataset\sign project\10.youareperfect\You Are Perfect_1.mp4,youareperfect,10,welcome,44,0.19666666666666666,False,SUCCESS
+manideepyouareperfect-2.mp4,D:\Amrita SLR Dataset\sign project\10.youareperfect\manideepyouareperfect-2.mp4,youareperfect,10,sorry,33,0.11333333333333333,False,SUCCESS
+0403(25).mp4,D:\Amrita SLR Dataset\sign project\11.monsoon\0403(25).mp4,monsoon,11,sleep,32,0.16333333333333333,False,SUCCESS
+Monsoon 1.mp4,D:\Amrita SLR Dataset\sign project\11.monsoon\Monsoon 1.mp4,monsoon,11,bird,6,0.1652204184704185,False,SUCCESS
+krishnarajmonsoon_1.mp4,D:\Amrita SLR Dataset\sign project\11.monsoon\krishnarajmonsoon_1.mp4,monsoon,11,black,7,0.25256127369362685,False,SUCCESS
+0403(85).mp4,D:\Amrita SLR Dataset\sign project\12.afternoon\0403(85).mp4,afternoon,12,sorry,33,0.31333333333333335,False,SUCCESS
+Afternoon_1.mp4,D:\Amrita SLR Dataset\sign project\12.afternoon\Afternoon_1.mp4,afternoon,12,sorry,33,0.23,False,SUCCESS
+Angry -3.mp4,D:\Amrita SLR Dataset\sign project\13.angry\Angry -3.mp4,angry,13,sorry,33,0.31333333333333335,False,SUCCESS
+Angry_2.mp4,D:\Amrita SLR Dataset\sign project\13.angry\Angry_2.mp4,angry,13,sorry,33,0.22666666666666666,False,SUCCESS
+0403(30).mp4,D:\Amrita SLR Dataset\sign project\14.bad\0403(30).mp4,bad,14,sorry,33,0.3,False,SUCCESS
+Bad1.mp4,D:\Amrita SLR Dataset\sign project\14.bad\Bad1.mp4,bad,14,sorry,33,0.24666666666666667,False,SUCCESS
+Bad2.mp4,D:\Amrita SLR Dataset\sign project\14.bad\Bad2.mp4,bad,14,sorry,33,0.24666666666666667,False,SUCCESS
+0403(33).mp4,D:\Amrita SLR Dataset\sign project\15.boy\0403(33).mp4,boy,15,sorry,33,0.12666666666666668,False,SUCCESS
+Boy -1.mp4,D:\Amrita SLR Dataset\sign project\15.boy\Boy -1.mp4,boy,15,sorry,33,0.22666666666666666,False,SUCCESS
+manideepboy-3.mp4,D:\Amrita SLR Dataset\sign project\15.boy\manideepboy-3.mp4,boy,15,sorry,33,0.09333333333333334,False,SUCCESS
+Eat_2.mp4,D:\Amrita SLR Dataset\sign project\16.eat\Eat_2.mp4,eat,16,sorry,33,0.1,False,SUCCESS
+manideepeat-1.mp4,D:\Amrita SLR Dataset\sign project\16.eat\manideepeat-1.mp4,eat,16,sorry,33,0.11666666666666667,False,SUCCESS
+0403(40).mp4,D:\Amrita SLR Dataset\sign project\17.friend\0403(40).mp4,friend,17,tommorow,42,0.08666666666666667,False,SUCCESS
+KrishnarajFriend2.mp4,D:\Amrita SLR Dataset\sign project\17.friend\KrishnarajFriend2.mp4,friend,17,sorry,33,0.17666666666666667,False,SUCCESS
+manideepfriend-1.mp4,D:\Amrita SLR Dataset\sign project\17.friend\manideepfriend-1.mp4,friend,17,sorry,33,0.12666666666666668,False,SUCCESS
+0403(42).mp4,D:\Amrita SLR Dataset\sign project\18.drinking\0403(42).mp4,drinking,18,sorry,33,0.31666666666666665,False,SUCCESS
+Drinking -2.mp4,D:\Amrita SLR Dataset\sign project\18.drinking\Drinking -2.mp4,drinking,18,sorry,33,0.14333333333333334,False,SUCCESS
+0403(86).mp4,D:\Amrita SLR Dataset\sign project\19.girl\0403(86).mp4,girl,19,sorry,33,0.2,False,SUCCESS
+Girl -2.mp4,D:\Amrita SLR Dataset\sign project\19.girl\Girl -2.mp4,girl,19,today,41,0.09333333333333334,False,SUCCESS
+manideep girl-1.mp4,D:\Amrita SLR Dataset\sign project\19.girl\manideep girl-1.mp4,girl,19,sorry,33,0.18,False,SUCCESS
+Brother -2.mp4,D:\Amrita SLR Dataset\sign project\20.brother\Brother -2.mp4,brother,20,sorry,33,0.3,False,SUCCESS
+Brother 3.mp4,D:\Amrita SLR Dataset\sign project\20.brother\Brother 3.mp4,brother,20,sorry,33,0.33666666666666667,False,SUCCESS
+0403(94).mp4,D:\Amrita SLR Dataset\sign project\21.good\0403(94).mp4,good,21,today,41,0.12,False,SUCCESS
+Good1.mp4,D:\Amrita SLR Dataset\sign project\21.good\Good1.mp4,good,21,sorry,33,0.11666666666666667,False,SUCCESS
+KrishnarajGood3.mp4,D:\Amrita SLR Dataset\sign project\21.good\KrishnarajGood3.mp4,good,21,tommorow,42,0.08666666666666667,False,SUCCESS
+Father1.mp4,D:\Amrita SLR Dataset\sign project\22.father\Father1.mp4,father,22,sorry,33,0.21666666666666667,False,SUCCESS
+Father2.mp4,D:\Amrita SLR Dataset\sign project\22.father\Father2.mp4,father,22,sorry,33,0.26,False,SUCCESS
+Father_2.mp4,D:\Amrita SLR Dataset\sign project\22.father\Father_2.mp4,father,22,sorry,33,0.23666666666666666,False,SUCCESS
+0403(100).mp4,D:\Amrita SLR Dataset\sign project\23.evening\0403(100).mp4,evening,23,evening,15,0.09666666666666666,True,SUCCESS
+Evening 2.mp4,D:\Amrita SLR Dataset\sign project\23.evening\Evening 2.mp4,evening,23,evening,15,0.08,True,SUCCESS
+KrishnarajEvening1.mp4,D:\Amrita SLR Dataset\sign project\23.evening\KrishnarajEvening1.mp4,evening,23,evening,15,0.17333333333333334,True,SUCCESS
+Help -3.mp4,D:\Amrita SLR Dataset\sign project\24.help\Help -3.mp4,help,24,sorry,33,0.09333333333333334,False,SUCCESS
+Help_1.mp4,D:\Amrita SLR Dataset\sign project\24.help\Help_1.mp4,help,24,sorry,33,0.17333333333333334,False,SUCCESS
+manideephelp-2.mp4,D:\Amrita SLR Dataset\sign project\24.help\manideephelp-2.mp4,help,24,sorry,33,0.11,False,SUCCESS
+KrishnarajMother1.mp4,D:\Amrita SLR Dataset\sign project\25.mother\KrishnarajMother1.mp4,mother,25,sorry,33,0.32,False,SUCCESS
+Mother_1.mp4,D:\Amrita SLR Dataset\sign project\25.mother\Mother_1.mp4,mother,25,sorry,33,0.22666666666666666,False,SUCCESS
+manideepmother-1.mp4,D:\Amrita SLR Dataset\sign project\25.mother\manideepmother-1.mp4,mother,25,sorry,33,0.16,False,SUCCESS
+Name3.mp4,D:\Amrita SLR Dataset\sign project\26.NAME\Name3.mp4,NAME,26,sorry,33,0.11333333333333333,False,SUCCESS
+manideepname-2.mp4,D:\Amrita SLR Dataset\sign project\26.NAME\manideepname-2.mp4,NAME,26,sorry,33,0.14,False,SUCCESS
+0403(75).mp4,D:\Amrita SLR Dataset\sign project\27.Night\0403(75).mp4,Night,27,Night,2,0.10333333333333333,True,SUCCESS
+KrishnarajNight3.mp4,D:\Amrita SLR Dataset\sign project\27.Night\KrishnarajNight3.mp4,Night,27,sorry,33,0.15,False,SUCCESS
+0403(64).mp4,D:\Amrita SLR Dataset\sign project\28.Music\0403(64).mp4,Music,28,bird,6,0.14133974358974358,False,SUCCESS
+Music_1.mp4,D:\Amrita SLR Dataset\sign project\28.Music\Music_1.mp4,Music,28,welcome,44,0.10333333333333333,False,SUCCESS
+KrishnarajNose2.mp4,D:\Amrita SLR Dataset\sign project\29.nose\KrishnarajNose2.mp4,nose,29,sorry,33,0.27666666666666667,False,SUCCESS
+Nose_2.mp4,D:\Amrita SLR Dataset\sign project\29.nose\Nose_2.mp4,nose,29,sorry,33,0.2833333333333333,False,SUCCESS
+manideepnose-1.mp4,D:\Amrita SLR Dataset\sign project\29.nose\manideepnose-1.mp4,nose,29,black,7,0.23540747378982688,False,SUCCESS
+KrishnarajSleep3.mp4,D:\Amrita SLR Dataset\sign project\30.sleep\KrishnarajSleep3.mp4,sleep,30,sorry,33,0.14,False,SUCCESS
+Sleep -2.mp4,D:\Amrita SLR Dataset\sign project\30.sleep\Sleep -2.mp4,sleep,30,sleep,32,0.1,True,SUCCESS
+Sleep_1.mp4,D:\Amrita SLR Dataset\sign project\30.sleep\Sleep_1.mp4,sleep,30,sorry,33,0.18333333333333332,False,SUCCESS
+Sit3.mp4,D:\Amrita SLR Dataset\sign project\31.sit\Sit3.mp4,sit,31,bird,6,0.18313131313131312,False,SUCCESS
+Sit_3.mp4,D:\Amrita SLR Dataset\sign project\31.sit\Sit_3.mp4,sit,31,bird,6,0.22987781662781667,False,SUCCESS
+manideepsit-3.mp4,D:\Amrita SLR Dataset\sign project\31.sit\manideepsit-3.mp4,sit,31,bird,6,0.14138827838827836,False,SUCCESS
+0403(60).mp4,D:\Amrita SLR Dataset\sign project\32.sorry\0403(60).mp4,sorry,32,sorry,33,0.24333333333333335,True,SUCCESS
+0403(61).mp4,D:\Amrita SLR Dataset\sign project\32.sorry\0403(61).mp4,sorry,32,sorry,33,0.2833333333333333,True,SUCCESS
+manideepsorry-1.mp4,D:\Amrita SLR Dataset\sign project\32.sorry\manideepsorry-1.mp4,sorry,32,sorry,33,0.30666666666666664,True,SUCCESS
+0403(69).mp4,D:\Amrita SLR Dataset\sign project\33.stand\0403(69).mp4,stand,33,sorry,33,0.11333333333333333,False,SUCCESS
+KrishnarajStand1.mp4,D:\Amrita SLR Dataset\sign project\33.stand\KrishnarajStand1.mp4,stand,33,sorry,33,0.12333333333333334,False,SUCCESS
+0403(65).mp4,D:\Amrita SLR Dataset\sign project\34.stop\0403(65).mp4,stop,34,sorry,33,0.17,False,SUCCESS
+KrishnarajStop1.mp4,D:\Amrita SLR Dataset\sign project\34.stop\KrishnarajStop1.mp4,stop,34,sorry,33,0.23333333333333334,False,SUCCESS
+STOP 3.mp4,D:\Amrita SLR Dataset\sign project\34.stop\STOP 3.mp4,stop,34,sorry,33,0.17666666666666667,False,SUCCESS
+STUDENT 3.mp4,D:\Amrita SLR Dataset\sign project\35.student\STUDENT 3.mp4,student,35,student,36,0.10333333333333333,True,SUCCESS
+Student 3(1).mp4,D:\Amrita SLR Dataset\sign project\35.student\Student 3(1).mp4,student,35,sleep,32,0.10666666666666667,False,SUCCESS
+Study 2(1).mp4,D:\Amrita SLR Dataset\sign project\36.study\Study 2(1).mp4,study,36,study,37,0.31,True,SUCCESS
+manideepstudy-2.mp4,D:\Amrita SLR Dataset\sign project\36.study\manideepstudy-2.mp4,study,36,study,37,0.13333333333333333,True,SUCCESS
+0403(109).mp4,D:\Amrita SLR Dataset\sign project\37.teacher\0403(109).mp4,teacher,37,sorry,33,0.14666666666666667,False,SUCCESS
+TEACHER 2.mp4,D:\Amrita SLR Dataset\sign project\37.teacher\TEACHER 2.mp4,teacher,37,study,37,0.3466666666666667,False,SUCCESS
+THANKYOU 2.mp4,D:\Amrita SLR Dataset\sign project\38.thankyou\THANKYOU 2.mp4,thankyou,38,bird,6,0.10847089947089945,False,SUCCESS
+Thank you 1.mp4,D:\Amrita SLR Dataset\sign project\38.thankyou\Thank you 1.mp4,thankyou,38,bird,6,0.1454537037037037,False,SUCCESS
+Thankyou -1.mp4,D:\Amrita SLR Dataset\sign project\38.thankyou\Thankyou -1.mp4,thankyou,38,sleep,32,0.10333333333333333,False,SUCCESS
+Today -1.mp4,D:\Amrita SLR Dataset\sign project\39.today\Today -1.mp4,today,39,sorry,33,0.15333333333333332,False,SUCCESS
+manideeptoday-2.mp4,D:\Amrita SLR Dataset\sign project\39.today\manideeptoday-2.mp4,today,39,tommorow,42,0.11,False,SUCCESS
+Tomorrow 3(1).mp4,D:\Amrita SLR Dataset\sign project\40.tommorow\Tomorrow 3(1).mp4,tommorow,40,sorry,33,0.13333333333333333,False,SUCCESS
+krishnarajtommorow_2.mp4,D:\Amrita SLR Dataset\sign project\40.tommorow\krishnarajtommorow_2.mp4,tommorow,40,sorry,33,0.19333333333333333,False,SUCCESS
+manideeptomorrow-3.mp4,D:\Amrita SLR Dataset\sign project\40.tommorow\manideeptomorrow-3.mp4,tommorow,40,black,7,0.10245043845043844,False,SUCCESS
+WELCOME 2.mp4,D:\Amrita SLR Dataset\sign project\41.welcome\WELCOME 2.mp4,welcome,41,bird,6,0.17703571428571427,False,SUCCESS
+WELCOME 3.mp4,D:\Amrita SLR Dataset\sign project\41.welcome\WELCOME 3.mp4,welcome,41,welcome,44,0.13666666666666666,True,SUCCESS
+manideepwelcome-2.mp4,D:\Amrita SLR Dataset\sign project\41.welcome\manideepwelcome-2.mp4,welcome,41,sorry,33,0.15,False,SUCCESS
+0403(125).mp4,D:\Amrita SLR Dataset\sign project\42.work\0403(125).mp4,work,42,sleep,32,0.12666666666666668,False,SUCCESS
+Work -3.mp4,D:\Amrita SLR Dataset\sign project\42.work\Work -3.mp4,work,42,sorry,33,0.11,False,SUCCESS
+manideepwork-3.mp4,D:\Amrita SLR Dataset\sign project\42.work\manideepwork-3.mp4,work,42,sleep,32,0.14,False,SUCCESS
+Yesterday -2.mp4,D:\Amrita SLR Dataset\sign project\43.yesterday\Yesterday -2.mp4,yesterday,43,sorry,33,0.25333333333333335,False,SUCCESS
+Yesterday 3(1).mp4,D:\Amrita SLR Dataset\sign project\43.yesterday\Yesterday 3(1).mp4,yesterday,43,sorry,33,0.19,False,SUCCESS
+manideepyesterday-1.mp4,D:\Amrita SLR Dataset\sign project\43.yesterday\manideepyesterday-1.mp4,yesterday,43,sorry,33,0.2966666666666667,False,SUCCESS
+0403(134).mp4,D:\Amrita SLR Dataset\sign project\44.teeth\0403(134).mp4,teeth,44,sorry,33,0.31333333333333335,False,SUCCESS
+KrishnarajTeeth2.mp4,D:\Amrita SLR Dataset\sign project\44.teeth\KrishnarajTeeth2.mp4,teeth,44,sorry,33,0.2633333333333333,False,SUCCESS
+manideepteeth-2.mp4,D:\Amrita SLR Dataset\sign project\44.teeth\manideepteeth-2.mp4,teeth,44,sorry,33,0.25333333333333335,False,SUCCESS
+Hand -1.mp4,D:\Amrita SLR Dataset\sign project\45.hand\Hand -1.mp4,hand,45,sorry,33,0.10333333333333333,False,SUCCESS
+Hand -3.mp4,D:\Amrita SLR Dataset\sign project\45.hand\Hand -3.mp4,hand,45,bird,6,0.08288131313131313,False,SUCCESS
+krishnarajhand3.mp4,D:\Amrita SLR Dataset\sign project\45.hand\krishnarajhand3.mp4,hand,45,bird,6,0.12288888888888887,False,SUCCESS
+0403(137).mp4,D:\Amrita SLR Dataset\sign project\46.write\0403(137).mp4,write,46,welcome,44,0.13,False,SUCCESS
+0403(139).mp4,D:\Amrita SLR Dataset\sign project\46.write\0403(139).mp4,write,46,welcome,44,0.20333333333333334,False,SUCCESS
+manideepwrite-3.mp4,D:\Amrita SLR Dataset\sign project\46.write\manideepwrite-3.mp4,write,46,welcome,44,0.09,False,SUCCESS
+UMBRELLA 2.mp4,D:\Amrita SLR Dataset\sign project\47.umberlla\UMBRELLA 2.mp4,umberlla,47,sorry,33,0.09666666666666666,False,SUCCESS
+Umbrella-2.mp4,D:\Amrita SLR Dataset\sign project\47.umberlla\Umbrella-2.mp4,umberlla,47,sleep,32,0.10666666666666667,False,SUCCESS
+manideepumbrella-1.mp4,D:\Amrita SLR Dataset\sign project\47.umberlla\manideepumbrella-1.mp4,umberlla,47,sleep,32,0.16666666666666666,False,SUCCESS
+0403(140).mp4,D:\Amrita SLR Dataset\sign project\48.ring\0403(140).mp4,ring,48,welcome,44,0.24666666666666667,False,SUCCESS
+KrishnarajRing1.mp4,D:\Amrita SLR Dataset\sign project\48.ring\KrishnarajRing1.mp4,ring,48,study,37,0.18,False,SUCCESS
+POWER 2.mp4,D:\Amrita SLR Dataset\sign project\50.power\POWER 2.mp4,power,50,sorry,33,0.16333333333333333,False,SUCCESS
+Power 2(1).mp4,D:\Amrita SLR Dataset\sign project\50.power\Power 2(1).mp4,power,50,sorry,33,0.19333333333333333,False,SUCCESS
+Power 3(1).mp4,D:\Amrita SLR Dataset\sign project\50.power\Power 3(1).mp4,power,50,sorry,33,0.19,False,SUCCESS

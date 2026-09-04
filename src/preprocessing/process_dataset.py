@@ -1,0 +1,605 @@
+from pathlib import Path
+
+import cv2
+import mediapipe as mp
+import numpy as np
+import pandas as pd
+
+
+# ============================================================
+# CONFIGURATION
+# ============================================================
+
+DATASET_ROOT = Path(
+    r"D:\Amrita SLR Dataset\sign project"
+)
+
+METADATA_PATH = Path(
+    "data/video_metadata_split.csv"
+)
+
+OUTPUT_DIR = Path(
+    "data/processed"
+)
+
+NUM_SAMPLED_FRAMES = 20
+
+
+# ============================================================
+# MEDIAPIPE CONFIGURATION
+# ============================================================
+
+BaseOptions = mp.tasks.BaseOptions
+
+HandLandmarker = mp.tasks.vision.HandLandmarker
+
+HandLandmarkerOptions = (
+    mp.tasks.vision.HandLandmarkerOptions
+)
+
+RunningMode = (
+    mp.tasks.vision.RunningMode
+)
+
+
+options = HandLandmarkerOptions(
+    base_options=BaseOptions(
+        model_asset_path="models/hand_landmarker.task"
+    ),
+    running_mode=RunningMode.VIDEO,
+    num_hands=2,
+    min_hand_detection_confidence=0.2,
+    min_hand_presence_confidence=0.2,
+    min_tracking_confidence=0.2,
+)
+
+
+# ============================================================
+# HELPER FUNCTIONS
+# ============================================================
+
+def empty_hand():
+    """
+    Return 63 empty values for one hand.
+
+    21 landmarks × 3 coordinates = 63
+    """
+    return [np.nan] * 63
+
+
+def extract_hand(landmarks):
+    """
+    Extract x, y, z coordinates for 21 landmarks.
+    """
+
+    features = []
+
+    for landmark in landmarks:
+
+        features.extend([
+            landmark.x,
+            landmark.y,
+            landmark.z
+        ])
+
+    return features
+
+
+def normalize_hand(features):
+    """
+    Make all landmark coordinates relative to the wrist.
+
+    Landmark 0 = wrist.
+    """
+
+    if all(pd.isna(value) for value in features):
+        return features
+
+    wrist_x = features[0]
+    wrist_y = features[1]
+    wrist_z = features[2]
+
+    normalized = []
+
+    for i in range(21):
+
+        x = features[i * 3]
+        y = features[i * 3 + 1]
+        z = features[i * 3 + 2]
+
+        if pd.isna(x):
+
+            normalized.extend([
+                np.nan,
+                np.nan,
+                np.nan
+            ])
+
+        else:
+
+            normalized.extend([
+                x - wrist_x,
+                y - wrist_y,
+                z - wrist_z
+            ])
+
+    return normalized
+
+
+def interpolate_features(features):
+    """
+    Fill missing landmark values using temporal interpolation.
+    """
+
+    array = np.array(
+        features,
+        dtype=float
+    )
+
+    for column in range(array.shape[1]):
+
+        series = pd.Series(
+            array[:, column]
+        )
+
+        series = (
+            series
+            .interpolate(
+                method="linear",
+                limit_direction="both"
+            )
+        )
+
+        array[:, column] = series.values
+
+    return array
+
+
+# ============================================================
+# PROCESS ONE VIDEO
+# ============================================================
+
+def process_video(video_path, landmarker):
+
+    cap = cv2.VideoCapture(
+        str(video_path)
+    )
+
+    if not cap.isOpened():
+
+        raise RuntimeError(
+            f"Could not open video: {video_path}"
+        )
+
+    fps = cap.get(
+        cv2.CAP_PROP_FPS
+    )
+
+    if fps <= 0:
+        fps = 30.0
+
+    frames = []
+
+    left_detected = []
+
+    right_detected = []
+
+    frame_number = 0
+
+    # --------------------------------------------------------
+    # READ VIDEO FRAME BY FRAME
+    # --------------------------------------------------------
+
+    while True:
+
+        success, frame = cap.read()
+
+        if not success:
+            break
+
+        frame_number += 1
+
+        # ----------------------------------------------------
+        # Convert BGR → RGB
+        # ----------------------------------------------------
+
+        rgb = cv2.cvtColor(
+            frame,
+            cv2.COLOR_BGR2RGB
+        )
+
+        mp_image = mp.Image(
+            image_format=mp.ImageFormat.SRGB,
+            data=rgb
+        )
+
+        # ----------------------------------------------------
+        # Timestamp
+        #
+        # Starts from 0 for each NEW video.
+        # ----------------------------------------------------
+
+        timestamp_ms = int(
+            ((frame_number - 1) / fps)
+            * 1000
+        )
+
+        # ----------------------------------------------------
+        # MediaPipe inference
+        # ----------------------------------------------------
+
+        result = landmarker.detect_for_video(
+            mp_image,
+            timestamp_ms
+        )
+
+        # ----------------------------------------------------
+        # Default: no hands
+        # ----------------------------------------------------
+
+        left = empty_hand()
+
+        right = empty_hand()
+
+        left_found = False
+
+        right_found = False
+
+        # ----------------------------------------------------
+        # Process detected hands
+        # ----------------------------------------------------
+
+        for hand_index, landmarks in enumerate(
+            result.hand_landmarks
+        ):
+
+            handedness = (
+                result.handedness[
+                    hand_index
+                ][0]
+            )
+
+            label = (
+                handedness.category_name
+            )
+
+            features = extract_hand(
+                landmarks
+            )
+
+            if label == "Left":
+
+                left = features
+
+                left_found = True
+
+            elif label == "Right":
+
+                right = features
+
+                right_found = True
+
+        # ----------------------------------------------------
+        # Wrist-relative normalization
+        # ----------------------------------------------------
+
+        left = normalize_hand(left)
+
+        right = normalize_hand(right)
+
+        # ----------------------------------------------------
+        # Store frame
+        #
+        # 63 left + 63 right = 126
+        # ----------------------------------------------------
+
+        frames.append(
+            left + right
+        )
+
+        left_detected.append(
+            left_found
+        )
+
+        right_detected.append(
+            right_found
+        )
+
+    cap.release()
+
+    # ========================================================
+    # VALIDATION
+    # ========================================================
+
+    if len(frames) == 0:
+
+        raise RuntimeError(
+            f"No frames found: {video_path}"
+        )
+
+    # ========================================================
+    # CONVERT TO NUMPY
+    # ========================================================
+
+    features = np.array(
+        frames,
+        dtype=float
+    )
+
+    # ========================================================
+    # MISSING VALUE HANDLING
+    # ========================================================
+
+    features = interpolate_features(
+        features
+    )
+
+    # ========================================================
+    # TEMPORAL SAMPLING
+    # ========================================================
+
+    total_frames = len(features)
+
+    indices = np.linspace(
+        0,
+        total_frames - 1,
+        NUM_SAMPLED_FRAMES,
+        dtype=int
+    )
+
+    sampled = features[
+        indices
+    ]
+
+    # ========================================================
+    # FINAL VALIDATION
+    # ========================================================
+
+    if sampled.shape != (
+        NUM_SAMPLED_FRAMES,
+        126
+    ):
+
+        raise RuntimeError(
+            f"Unexpected feature shape: "
+            f"{sampled.shape}"
+        )
+
+    # ========================================================
+    # FLATTEN
+    # ========================================================
+
+    flattened = sampled.flatten()
+
+    # Expected:
+    # 20 × 126 = 2520
+
+    if len(flattened) != 2520:
+
+        raise RuntimeError(
+            f"Expected 2520 features, "
+            f"got {len(flattened)}"
+        )
+
+    return (
+        flattened,
+        total_frames,
+        sum(left_detected),
+        sum(right_detected)
+    )
+
+
+# ============================================================
+# MAIN
+# ============================================================
+
+def main():
+
+    # --------------------------------------------------------
+    # Load metadata
+    # --------------------------------------------------------
+
+    metadata = pd.read_csv(
+        METADATA_PATH
+    )
+
+    print("\n")
+    print("=" * 70)
+    print("             PRODUCTION PIPELINE TEST")
+    print("=" * 70)
+
+    # --------------------------------------------------------
+    # Test videos
+    #
+    # All three are confirmed in metadata.
+    # --------------------------------------------------------
+
+    test_videos = [
+        ("bird", "0403(77).mp4"),
+        ("black", "0403(80).mp4"),
+        ("power", "POWER 1.mp4"),
+    ]
+
+    results = []
+
+    # ========================================================
+    # PROCESS EACH VIDEO
+    #
+    # IMPORTANT:
+    # A NEW MediaPipe Landmarker is created for EVERY video.
+    #
+    # This fixes:
+    #
+    # ValueError:
+    # Input timestamp must be monotonically increasing
+    # ========================================================
+
+    for label, video_name in test_videos:
+
+        print(
+            f"\nProcessing: "
+            f"{label}/{video_name}"
+        )
+
+        # ----------------------------------------------------
+        # Find metadata
+        # ----------------------------------------------------
+
+        match = metadata[
+            (metadata["label"] == label)
+            &
+            (
+                metadata["video_name"]
+                == video_name
+            )
+        ]
+
+        if match.empty:
+
+            print(
+                "  WARNING: "
+                "Video not found in metadata."
+            )
+
+            continue
+
+        row = match.iloc[0]
+
+        # ----------------------------------------------------
+        # Construct video path
+        # ----------------------------------------------------
+
+        video_path = (
+            DATASET_ROOT
+            / f"{int(row['class_id'])}.{label}"
+            / video_name
+        )
+
+        if not video_path.exists():
+
+            print(
+                f"  ERROR: "
+                f"File not found:\n"
+                f"  {video_path}"
+            )
+
+            continue
+
+        try:
+
+            # =================================================
+            # FRESH MEDIAPIPE INSTANCE
+            # =================================================
+
+            with HandLandmarker.create_from_options(
+                options
+            ) as landmarker:
+
+                (
+                    features,
+                    frame_count,
+                    left_count,
+                    right_count
+                ) = process_video(
+                    video_path,
+                    landmarker
+                )
+
+            # ------------------------------------------------
+            # Print result
+            # ------------------------------------------------
+
+            print(
+                f"  Frames: "
+                f"{frame_count}"
+            )
+
+            print(
+                f"  Left detections: "
+                f"{left_count}"
+            )
+
+            print(
+                f"  Right detections: "
+                f"{right_count}"
+            )
+
+            print(
+                f"  Feature size: "
+                f"{len(features)}"
+            )
+
+            # ------------------------------------------------
+            # Save result information
+            # ------------------------------------------------
+
+            results.append({
+
+                "class_id":
+                    row["class_id"],
+
+                "label":
+                    label,
+
+                "video_name":
+                    video_name,
+
+                "split":
+                    row["split"],
+
+                "frames":
+                    frame_count,
+
+                "left_detections":
+                    left_count,
+
+                "right_detections":
+                    right_count,
+
+                "feature_size":
+                    len(features),
+            })
+
+        except Exception as error:
+
+            print(
+                f"  ERROR: {error}"
+            )
+
+    # ========================================================
+    # FINAL SUMMARY
+    # ========================================================
+
+    results_df = pd.DataFrame(
+        results
+    )
+
+    print("\n")
+    print("=" * 70)
+    print("                 TEST SUMMARY")
+    print("=" * 70)
+
+    if not results_df.empty:
+
+        print(
+            results_df.to_string(
+                index=False
+            )
+        )
+
+    else:
+
+        print(
+            "No videos were processed successfully."
+        )
+
+    print("\n" + "=" * 70)
+
+
+# ============================================================
+# ENTRY POINT
+# ============================================================
+
+if __name__ == "__main__":
+
+    main()

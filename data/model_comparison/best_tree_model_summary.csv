@@ -1,0 +1,2 @@
+best_model,best_validation_accuracy,test_accuracy
+RF_500_sqrt,0.7716535433070866,0.7538461538461538

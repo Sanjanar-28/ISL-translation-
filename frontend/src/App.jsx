@@ -13,6 +13,18 @@ function App() {
   // Kept only for UI dropdown appearance.
   // Multilingual translation logic is not implemented here.
   const [language, setLanguage] = useState("English");
+  const [textInput, setTextInput] = useState("");
+const [isListening, setIsListening] = useState(false);
+const LANGUAGE_CODES = {
+  English: "en-IN",
+  Hindi: "hi-IN",
+  Kannada: "kn-IN",
+};
+const TTS_LANGUAGE_CODES = {
+  English: "en-IN",
+  Hindi: "hi-IN",
+  Kannada: "kn-IN",
+};
 
   // none = no preview
   // camera = webcam active
@@ -294,7 +306,64 @@ function App() {
 
     window.speechSynthesis.speak(speech);
   };
+// =========================================================
+// TEXT TO SPEECH
+// =========================================================
 
+const speakText = async () => {
+  if (!textInput.trim()) {
+    alert("Please enter or speak some text first.");
+    return;
+  }
+
+  try {
+    const response = await fetch(
+      "http://127.0.0.1:8000/tts",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          text: textInput,
+          language: language,
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(
+        errorData.detail || "Text-to-speech failed."
+      );
+    }
+
+    const audioBlob = await response.blob();
+
+    const audioUrl = URL.createObjectURL(
+      audioBlob
+    );
+
+    const audio = new Audio(audioUrl);
+
+    audio.play();
+
+    audio.onended = () => {
+      URL.revokeObjectURL(audioUrl);
+    };
+
+  } catch (error) {
+    console.error(
+      "Text-to-speech error:",
+      error
+    );
+
+    alert(
+      "Unable to generate speech: " +
+      error.message
+    );
+  }
+};
   // =========================================================
   // FORMAT CONFIDENCE
   // =========================================================
@@ -302,7 +371,55 @@ function App() {
   const confidenceText = prediction
     ? `${(prediction.confidence * 100).toFixed(2)}%`
     : "—";
+// =========================================================
+// SPEECH TO TEXT
+// =========================================================
 
+const startSpeechRecognition = () => {
+  const SpeechRecognition =
+    window.SpeechRecognition ||
+    window.webkitSpeechRecognition;
+
+  if (!SpeechRecognition) {
+    alert(
+      "Speech recognition is not supported in this browser. Please use Google Chrome."
+    );
+    return;
+  }
+
+  const recognition = new SpeechRecognition();
+
+  recognition.lang = LANGUAGE_CODES[language];
+  recognition.continuous = false;
+  recognition.interimResults = false;
+
+  recognition.onstart = () => {
+    setIsListening(true);
+  };
+
+  recognition.onresult = (event) => {
+    const text =
+      event.results[0][0].transcript;
+
+    setTextInput(text);
+    setIsListening(false);
+  };
+
+  recognition.onerror = (event) => {
+    console.error(
+      "Speech recognition error:",
+      event.error
+    );
+
+    setIsListening(false);
+  };
+
+  recognition.onend = () => {
+    setIsListening(false);
+  };
+
+  recognition.start();
+};
   // =========================================================
   // RENDER
   // =========================================================
@@ -567,19 +684,57 @@ function App() {
             </p>
 
             <textarea
-              className="text-input"
-              placeholder="Enter your message here..."
-            />
+  className="text-input"
+  placeholder="Enter your message here..."
+  value={textInput}
+  onChange={(event) =>
+    setTextInput(event.target.value)
+  }
+/>
 
-            <select className="language-select">
-              <option>English</option>
-              <option>Hindi</option>
-              <option>Kannada</option>
-            </select>
+            <select
+  className="language-select"
+  value={language}
+  onChange={(event) =>
+    setLanguage(event.target.value)
+  }
+>
+  <option value="English">
+    English
+  </option>
 
-            <button className="primary-button">
-              Convert to Sign
-            </button>
+  <option value="Hindi">
+    Hindi
+  </option>
+
+  <option value="Kannada">
+    Kannada
+  </option>
+</select>
+
+<button
+  className="secondary-button"
+  onClick={speakText}
+>
+  🔊 Speak Text
+</button>
+
+<button className="primary-button">
+  Convert to Sign
+</button>
+
+<button
+  className="secondary-button"
+  onClick={startSpeechRecognition}
+>
+  {isListening
+    ? "🎤 Listening..."
+    : "🎤 Speak"}
+</button>
+
+<button className="primary-button">
+  Convert to Sign
+</button>
 
           </section>
         )}

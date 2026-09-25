@@ -3,6 +3,9 @@ import shutil
 import tempfile
 
 from fastapi import FastAPI, File, HTTPException, UploadFile
+from fastapi.responses import FileResponse
+from pydantic import BaseModel
+from gtts import gTTS
 from fastapi.middleware.cors import CORSMiddleware
 
 from src.ml.predict_ensemble_video import predict_video
@@ -20,6 +23,9 @@ app = FastAPI(
     ),
     version="1.0.0",
 )
+class TTSRequest(BaseModel):
+    text: str
+    language: str
 
 
 # ============================================================
@@ -61,7 +67,66 @@ def health():
         "status": "healthy"
     }
 
+# ============================================================
+# TEXT TO SPEECH
+# ============================================================
 
+@app.post("/tts")
+async def text_to_speech(request: TTSRequest):
+
+    language_codes = {
+        "English": "en",
+        "Hindi": "hi",
+        "Kannada": "kn",
+    }
+
+    if request.language not in language_codes:
+        raise HTTPException(
+            status_code=400,
+            detail="Unsupported language."
+        )
+
+    if not request.text.strip():
+        raise HTTPException(
+            status_code=400,
+            detail="Text cannot be empty."
+        )
+
+    temp_dir = Path(tempfile.mkdtemp())
+    audio_path = temp_dir / "speech.mp3"
+
+    try:
+
+        language_code = language_codes[
+            request.language
+        ]
+
+        tts = gTTS(
+            text=request.text,
+            lang=language_code,
+            slow=False
+        )
+
+        tts.save(str(audio_path))
+
+        return FileResponse(
+            path=str(audio_path),
+            media_type="audio/mpeg",
+            filename="speech.mp3",
+            background=None,
+        )
+
+    except Exception as error:
+
+        shutil.rmtree(
+            temp_dir,
+            ignore_errors=True
+        )
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(error)
+        )
 # ============================================================
 # PREDICT VIDEO
 # ============================================================

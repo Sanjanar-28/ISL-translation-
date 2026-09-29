@@ -3,6 +3,9 @@ import numpy as np
 import mediapipe as mp
 import tensorflow as tf
 import pandas as pd
+import urllib.request
+import urllib.error
+import json
 from pathlib import Path
 
 
@@ -31,14 +34,22 @@ MEDIAPIPE_MODEL = Path(
 # SETTINGS
 # ============================================================
 
-# IMPORTANT:
-# The trained CNN + LSTM expects exactly 40 frames.
+# CNN + LSTM expects exactly 40 frames
 
 TARGET_FRAMES = 40
 
-# User can record anywhere from 40 to 100 frames.
+# User can record anywhere from 40 to 100 frames
 
 MAX_RECORDING_FRAMES = 100
+
+
+# ============================================================
+# BACKEND
+# ============================================================
+
+BACKEND_URL = (
+    "http://127.0.0.1:8000/live-prediction"
+)
 
 
 # ============================================================
@@ -170,14 +181,6 @@ def extract_features(result):
 
 def normalize_sequence(sequence):
 
-    # Input:
-    #
-    # (40,126)
-    #
-    # Reshape:
-    #
-    # (40,42,3)
-
     sequence = sequence.reshape(
         TARGET_FRAMES,
         42,
@@ -195,15 +198,11 @@ def normalize_sequence(sequence):
 
         landmarks = sequence[f]
 
-        # First landmark = origin
-
         origin = landmarks[0].copy()
 
         relative = (
             landmarks - origin
         )
-
-        # Calculate scale
 
         distances = np.linalg.norm(
             relative,
@@ -221,10 +220,6 @@ def normalize_sequence(sequence):
             )
 
         normalized[f] = relative
-
-    # Convert back to:
-    #
-    # (40,126)
 
     return normalized.reshape(
         TARGET_FRAMES,
@@ -263,6 +258,122 @@ def create_landmarker():
 
 
 # ============================================================
+# SEND PREDICTION TO BACKEND
+# ============================================================
+
+def send_prediction_to_backend(
+    prediction,
+    confidence
+):
+
+    # The model gives confidence as:
+    #
+    # 0 - 100
+    #
+    # Backend expects:
+    #
+    # 0 - 1
+
+    confidence_decimal = (
+        float(confidence) / 100.0
+    )
+
+    payload = {
+        "label": str(prediction),
+        "confidence": confidence_decimal
+    }
+
+    data = json.dumps(
+        payload
+    ).encode("utf-8")
+
+    request = urllib.request.Request(
+        BACKEND_URL,
+        data=data,
+        headers={
+            "Content-Type": "application/json"
+        },
+        method="POST"
+    )
+
+    try:
+
+        with urllib.request.urlopen(
+            request,
+            timeout=5
+        ) as response:
+
+            response_data = (
+                response.read()
+                .decode("utf-8")
+            )
+
+            result = json.loads(
+                response_data
+            )
+
+            if result.get("success"):
+
+                print()
+                print(
+                    "Backend connection: SUCCESS"
+                )
+
+                print(
+                    "Backend received:",
+                    result.get("label")
+                )
+
+                print(
+                    "Backend confidence:",
+                    f"{result.get('confidence', 0) * 100:.1f}%"
+                )
+
+                return True
+
+            else:
+
+                print()
+                print(
+                    "Backend returned an unsuccessful response."
+                )
+
+                return False
+
+    except urllib.error.URLError as error:
+
+        print()
+        print(
+            "Backend connection: FAILED"
+        )
+
+        print(
+            "Make sure FastAPI is running on:"
+        )
+
+        print(
+            "http://127.0.0.1:8000"
+        )
+
+        print(
+            "Error:",
+            error
+        )
+
+        return False
+
+    except Exception as error:
+
+        print()
+        print(
+            "Backend connection error:",
+            error
+        )
+
+        return False
+
+
+# ============================================================
 # PREDICT SIGN
 # ============================================================
 
@@ -293,15 +404,6 @@ def predict_sign(frames):
 
     # --------------------------------------------------------
     # SAMPLE EXACTLY 40 FRAMES
-    #
-    # If recording:
-    #
-    # 40 frames  -> all 40
-    # 60 frames  -> select 40
-    # 80 frames  -> select 40
-    # 100 frames -> select 40
-    #
-    # The whole recording is represented.
     # --------------------------------------------------------
 
     indices = np.linspace(
@@ -337,13 +439,6 @@ def predict_sign(frames):
             sampled
         ):
 
-            # IMPORTANT:
-            #
-            # Original frame goes to MediaPipe.
-            # We do NOT flip it here.
-            #
-            # Only the displayed webcam is mirrored.
-
             rgb = cv2.cvtColor(
                 frame,
                 cv2.COLOR_BGR2RGB
@@ -355,8 +450,6 @@ def predict_sign(frames):
                 ),
                 data=rgb
             )
-
-            # Give every frame an increasing timestamp.
 
             timestamp_ms = i * 100
 
@@ -394,10 +487,6 @@ def predict_sign(frames):
         feature_frames.shape
     )
 
-    # Expected:
-    #
-    # (40,126)
-
     if feature_frames.shape != (
         TARGET_FRAMES,
         126
@@ -420,12 +509,6 @@ def predict_sign(frames):
     # --------------------------------------------------------
     # FINAL MODEL INPUT
     # --------------------------------------------------------
-
-    # (40,126)
-    #
-    # ->
-    #
-    # (1,40,126)
 
     X = np.expand_dims(
         X,
@@ -510,6 +593,15 @@ def predict_sign(frames):
         )
 
     print("=" * 65)
+
+    # ========================================================
+    # SEND TO BACKEND
+    # ========================================================
+
+    send_prediction_to_backend(
+        prediction,
+        confidence
+    )
 
     return prediction, confidence
 
@@ -834,7 +926,7 @@ def main():
                 else:
 
                     print(
-                        f"Not enough frames."
+                        "Not enough frames."
                     )
 
                     print(
